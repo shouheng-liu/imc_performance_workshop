@@ -57,11 +57,14 @@ public class PnLCalculator {
         }
 
         public void onMarketUpdate(MarketUpdate marketUpdate) {
-            throw new UnsupportedOperationException("Function not yet implemented.");
+            // throw new UnsupportedOperationException("Function not yet implemented.");
+            theLastPrice = (marketUpdate.getAsk().getBestPrice() + marketUpdate.getBid().getBestPrice()) / 2.0;
         }
 
         public void onTrade(Trade trade) {
-            throw new UnsupportedOperationException("Function not yet implemented.");
+            // throw new UnsupportedOperationException("Function not yet implemented.");
+            thePosition += trade.getVolume();
+            theCashBalance += (-1.0) * trade.getPrice() * trade.getVolume();
         }
 
         public String getInstrument() {
