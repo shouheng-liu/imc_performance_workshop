@@ -64,7 +64,7 @@ public class PnLCalculator {
         public void onTrade(Trade trade) {
             // throw new UnsupportedOperationException("Function not yet implemented.");
             thePosition += trade.getVolume();
-            theCashBalance += (-1.0) * trade.getPrice() * trade.getVolume();
+            theCashBalance += -1 * trade.getPrice() * trade.getVolume();
         }
 
         public String getInstrument() {
